@@ -123,7 +123,7 @@ function startGame() {
 
     updateReflection(liTag, 100, 0);
     liTag.addEventListener("mousemove", (event) => {
-      const scale = 0.03;
+      const scale = 0.06;
       const midX = (liTag.clientHeight / 2) * scale;
       const mouseXoffset = event.offsetX * scale;
       const mouseX = mouseXoffset - midX;
@@ -427,6 +427,6 @@ playAgain.addEventListener("click", function () {
 });
 
 function updateReflection(card, degree, percentage) {
-  card.style.background = `linear-gradient(${degree}deg, rgba(23, 180, 109 ,0.6) 0%,rgba(23, 180, 109,0.8) ${percentage}%,rgba(23, 180, 109,0.7) 100%)`;
+  card.style.background = `linear-gradient(${degree}deg, rgba(90, 0, 210 ,0.6) 0%,rgba(5, 0, 255,0.8) ${percentage}%,rgba(0, 1, 295,0.7) 100%)`;
   card.style.backgroundSize = "cover";
 }

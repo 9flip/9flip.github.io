@@ -258,7 +258,7 @@ https://stackoverflow.com/questions/21107439/disable-or-change-firefoxs-element-
 
 img {
   user-select: none;
-  width: 10rem;
+  width: 100%; 
 }
 
 .deck img {
@@ -272,13 +272,14 @@ img {
 }
 
 .flip {
-  transition: transform 0.3s linear;
+  transition: transform 0.3s linear; 
 }
 
 .flip img {
   /* background: white; */
   visibility: visible;
   height: 100%;
+  transform: rotateY(180deg)
 }
 
 .deck .card.match {
@@ -305,10 +306,10 @@ h4 {
     transform: rotateX(0deg) rotateY(180deg) scale(1);
   }
   80% {
-    transform: scale(1.1);
+    transform: scale(1.5) rotateY(190deg);
   }
   100% {
-    transform: scale(1);
+    transform: scale(1) rotateY(180deg);
   }
 }
 
