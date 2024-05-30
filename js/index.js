@@ -1,21 +1,40 @@
-const deckCards = [
-  "čermák.png",
-  "čermák_AI.png",
-  "Boat.png",
-  "Boat.png",
-  "Citizenship.png",
-  "Citizenship.png",
-  "Hack.png",
-  "Hack.png",
-  "Nerd-Rage.png",
-  "Nerd-Rage.png",
-  "Nuka-Cola.png",
-  "Nuka-Cola.png",
-  "Robotics.png",
-  "Robotics.png",
-  "Shock.png",
-  "Shock.png",
+const lidi = [
+  "čermák",
+  "simonkarban",
+  "radimruzicka",
+  "antonin_vidensky",
+  "tomas_sevcik",
+  "ada_missbergerova",
+  "david_fikr",
+  "sasa_hamal",
+  "sara_jaklova",
+  "martina_brdlikova",
+  "kristyna_motlova",
+  "dorota_hamplova",
+  "vojtech_riha",
+  "petrabudinova"
 ];
+
+let deckCards = []
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+// Shuffle the lidi array
+const shuffledLidi = shuffle([...lidi]);
+
+// Create deckCards array
+shuffledLidi.forEach(person => {
+  deckCards.push(`${person}.png`);
+  deckCards.push(`${person}_AI.png`);
+});
+
+console.log(deckCards);
 
 const deck = document.querySelector(".deck");
 let opened = [];
@@ -108,8 +127,8 @@ function startGame() {
     // Create the <img> tags
     const addImage = document.createElement("IMG");
     // Append <img> to <li>
-    console.log(addImage)
-    console.log(i)
+    console.log(addImage);
+    console.log(i);
     liTag.appendChild(addImage);
     // Set the img src path with the shuffled deck
     addImage.setAttribute("src", "img/" + shuffledDeck[i]);
@@ -234,11 +253,17 @@ function compareTwo() {
     document.body.style.pointerEvents = "none";
   }
   // Compare the two images src
-  if (opened.length === 2 && opened[0].src.replace(/_AI/g, '') === opened[1].src.replace(/_AI/g, '')) {
+  if (
+    opened.length === 2 &&
+    opened[0].src.replace(/_AI/g, "") === opened[1].src.replace(/_AI/g, "")
+  ) {
     // If matched call match()
     match();
     // console.log("It's a Match!");
-  } else if (opened.length === 2 && opened[0].src.replace(/_AI/g, '') != opened[1].src.replace(/_AI/g, '')) {
+  } else if (
+    opened.length === 2 &&
+    opened[0].src.replace(/_AI/g, "") != opened[1].src.replace(/_AI/g, "")
+  ) {
     // If No match call noMatch()
     noMatch();
     // console.log("NO Match!");
