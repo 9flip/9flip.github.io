@@ -12,7 +12,9 @@ const lidi = [
   "kristyna_motlova",
   "dorota_hamplova",
   "vojtech_riha",
-  "petrabudinova"
+  "petrabudinova",
+  "andrejbojko",
+  "vojtech_slezak"
 ];
 
 let deckCards = []
@@ -113,7 +115,8 @@ function startGame() {
     cards = deckCards.slice(0, 8);
   } else {
     deck.classList.add("hard");
-    cards = [...deckCards];
+  //  cards = [...deckCards];
+  cards = deckCards.slice(0, 12);
   }
 
   // Invoke shuffle function and store in variable
@@ -133,7 +136,7 @@ function startGame() {
     // Set the img src path with the shuffled deck
     addImage.setAttribute("src", "img/" + shuffledDeck[i]);
     // Add an alt tag to the image
-    addImage.setAttribute("alt", "image of vault boy from fallout");
+    addImage.setAttribute("alt", "nevím");
     // Update the new <li> to the deck <ul>
 
     const divTag = document.createElement("DIV");
@@ -442,7 +445,6 @@ mediumGame.addEventListener("click", function () {
 hardGame.addEventListener("click", function () {
   startModal.style.display = "none";
   gameMode = "hard";
-  console.log("ENTROU");
   startGame();
 });
 
