@@ -58,7 +58,7 @@ shuffledLidi.forEach(person => {
   deckCards.push(`${person}.png`);
   deckCards.push(`${person}_AI.png`);
   checkImageFiles(person)
-  .then(bothExist => console.log(`Image files for ${person} exist: ${bothExist}`));
+  .then(bothExist => console.log(`Obrázky pro ${person} existují: ${bothExist}`));
 });
 
 console.log(deckCards);
