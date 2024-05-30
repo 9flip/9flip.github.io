@@ -1,3 +1,3 @@
 
-## 🔗 Hra : [Card Flip Game](https://9flip.github.io/) 
+## 🔗 Hra : [9Flip 9E](https://9flip.github.io/) 
 
