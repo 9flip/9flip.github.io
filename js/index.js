@@ -1,6 +1,6 @@
 const deckCards = [
-  "Agility.png",
-  "Agility.png",
+  "čermák.png",
+  "čermák_AI.png",
   "Boat.png",
   "Boat.png",
   "Citizenship.png",
@@ -108,6 +108,8 @@ function startGame() {
     // Create the <img> tags
     const addImage = document.createElement("IMG");
     // Append <img> to <li>
+    console.log(addImage)
+    console.log(i)
     liTag.appendChild(addImage);
     // Set the img src path with the shuffled deck
     addImage.setAttribute("src", "img/" + shuffledDeck[i]);
@@ -232,11 +234,11 @@ function compareTwo() {
     document.body.style.pointerEvents = "none";
   }
   // Compare the two images src
-  if (opened.length === 2 && opened[0].src === opened[1].src) {
+  if (opened.length === 2 && opened[0].src.replace(/_AI/g, '') === opened[1].src.replace(/_AI/g, '')) {
     // If matched call match()
     match();
     // console.log("It's a Match!");
-  } else if (opened.length === 2 && opened[0].src != opened[1].src) {
+  } else if (opened.length === 2 && opened[0].src.replace(/_AI/g, '') != opened[1].src.replace(/_AI/g, '')) {
     // If No match call noMatch()
     noMatch();
     // console.log("NO Match!");

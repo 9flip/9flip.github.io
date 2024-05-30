@@ -210,9 +210,9 @@ Deck of Cards
 .deck {
   background: linear-gradient(
     75deg,
-    rgba(255, 214, 153, 1) 0%,
-    rgba(255, 248, 203, 1) 60%,
-    rgba(255, 218, 212, 1) 100%
+    rgb(0, 0, 0) 0%,
+    rgb(9, 0, 58) 60%,
+    rgb(10, 1, 44) 100%
   );
   border-radius: 1.5em;
   display: grid;
@@ -222,8 +222,8 @@ Deck of Cards
   justify-items: center;
   margin-bottom: 6em;
   padding: 0.5em;
-  width: 35em;
-  height: 35em;
+  width: 70em;
+  height: 70em;
   box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
     0 15px 40px rgba(166, 173, 201, 0.2);
 }
@@ -246,9 +246,9 @@ Deck of Cards
 
 .card {
   border-radius: 0.5em;
-  height: 7em;
-  width: 7em;
-  box-shadow: 5px 0px 10px 4px rgba(158, 134, 140, 0.5);
+  height: 10em;
+  width: 10em;
+  box-shadow: 5px 0px 10px 4px rgba(0, 0, 0, 0.5);
 }
 
 /*
@@ -258,7 +258,7 @@ https://stackoverflow.com/questions/21107439/disable-or-change-firefoxs-element-
 
 img {
   user-select: none;
-  width: 4rem;
+  width: 10rem;
 }
 
 .deck img {
