@@ -377,7 +377,7 @@ function displayModal() {
 function winGame() {
   let len = 0;
   if (gameMode === "easy") len = 4;
-  else len = gameMode === "medium" ? 8 : 16;
+  else len = gameMode === "medium" ? 8 : 12;
 
   if (matched.length === len) {
     stopTime();
