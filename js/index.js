@@ -301,6 +301,7 @@ function noMatch() {
     // Remove class flip on images parent element
     opened[0].parentElement.classList.remove("flip");
     opened[1].parentElement.classList.remove("flip");
+    
     // Allow further mouse clicks on cards
     document.body.style.pointerEvents = "auto";
     // Remove the cards from opened array
@@ -351,9 +352,9 @@ function AddStats() {
   let best_second = best_time % 60;
   // Set the new <p> to have the content of stats (time, moves and star rating)
 
-  p[0].innerHTML = `Time taken: ${minutes} Minutes and ${seconds} Seconds (Best Time: ${best_minute} Minutes and ${best_second} Seconds)`;
-  p[1].innerHTML = `Moves Taken: ${moves} (Best Moves: ${best_moves})`;
-  p[2].innerHTML = `Your Star Rating is: ${starCount}/3`;
+  p[0].innerHTML = `Čas: ${minutes} Minut a ${seconds} Sekund (Nejlepší: ${best_minute} Minut a ${best_second} Sekund)`;
+  p[1].innerHTML = `Kroků: ${moves} (Nejmíň kroků: ${best_moves})`;
+  p[2].innerHTML = `Rating: ${starCount}/3`;
 }
 function displayModal() {
   // Access the modal <span> element (x) that closes the modal
