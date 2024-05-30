@@ -430,7 +430,6 @@ deck.addEventListener("click", function (evt) {
 reset.addEventListener("click", resetEverything);
 
 easyGame.addEventListener("click", function () {
-  console.log("ENTROU");
   startModal.style.display = "none";
   gameMode = "easy";
   startGame();
@@ -439,7 +438,6 @@ easyGame.addEventListener("click", function () {
 mediumGame.addEventListener("click", function () {
   startModal.style.display = "none";
   gameMode = "medium";
-  console.log("ENTROU");
   startGame();
 });
 
