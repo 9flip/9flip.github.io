@@ -14,7 +14,11 @@ const lidi = [
   "vojtech_riha",
   "petrabudinova",
   "andrejbojko",
-  "vojtech_slezak"
+  "vojtech_slezak",
+  "claudie",
+  "laura",
+  "linda",
+  "martin",
 ];
 
 let deckCards = []
