@@ -132,10 +132,7 @@ shuffledLidi.forEach(person => {
   deckCards.push(`${person}_AI.png`);
   checkImageFiles(person)
   .then(bothExist => console.log(`Obrázky pro ${person} existují: ${bothExist}`));
-});
-
-console.log(deckCards);
-  
+});  
   let cards = [];
   console.log(gameMode, mediumGame);
   if (gameMode === "easy") {
@@ -161,8 +158,6 @@ console.log(deckCards);
     // Create the <img> tags
     const addImage = document.createElement("IMG");
     // Append <img> to <li>
-    console.log(addImage);
-    console.log(i);
     liTag.appendChild(addImage);
     // Set the img src path with the shuffled deck
     addImage.setAttribute("src", "img/" + shuffledDeck[i]);
