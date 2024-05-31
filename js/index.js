@@ -23,50 +23,6 @@ const lidi = [
 
 let deckCards = []
 
-function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
-
-// Shuffle the lidi array
-const shuffledLidi = shuffle([...lidi]);
-
-async function checkImageExists(imageUrl) {
-  try {
-    const response = await fetch(imageUrl, { method: 'HEAD' });
-    return response.ok;
-  } catch (error) {
-    console.error('Error checking image existence:', error);
-    return false;
-  }
-}
-
-// Function to check if both image files exist for a person
-async function checkImageFiles(person) {
-  const imageUrl = `./img/${person}.png`;
-  const imageAIUrl = `./img/${person}_AI.png`;
-
-  const bothExist = await Promise.all([
-    checkImageExists(imageUrl),
-    checkImageExists(imageAIUrl)
-  ]);
-
-  return bothExist.every(exists => exists);
-}
-
-// Create deckCards array
-shuffledLidi.forEach(person => {
-  deckCards.push(`${person}.png`);
-  deckCards.push(`${person}_AI.png`);
-  checkImageFiles(person)
-  .then(bothExist => console.log(`Obrázky pro ${person} existují: ${bothExist}`));
-});
-
-console.log(deckCards);
-
 const deck = document.querySelector(".deck");
 let opened = [];
 let matched = [];
@@ -134,6 +90,52 @@ function shuffle(array) {
 }
 
 function startGame() {
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+// Shuffle the lidi array
+const shuffledLidi = shuffle([...lidi]);
+
+async function checkImageExists(imageUrl) {
+  try {
+    const response = await fetch(imageUrl, { method: 'HEAD' });
+    return response.ok;
+  } catch (error) {
+    console.error('Error checking image existence:', error);
+    return false;
+  }
+}
+
+// Function to check if both image files exist for a person
+async function checkImageFiles(person) {
+  const imageUrl = `./img/${person}.png`;
+  const imageAIUrl = `./img/${person}_AI.png`;
+
+  const bothExist = await Promise.all([
+    checkImageExists(imageUrl),
+    checkImageExists(imageAIUrl)
+  ]);
+
+  return bothExist.every(exists => exists);
+}
+
+// Create deckCards array
+  deckCards = []
+shuffledLidi.forEach(person => {
+  deckCards.push(`${person}.png`);
+  deckCards.push(`${person}_AI.png`);
+  checkImageFiles(person)
+  .then(bothExist => console.log(`Obrázky pro ${person} existují: ${bothExist}`));
+});
+
+console.log(deckCards);
+  
   let cards = [];
   console.log(gameMode, mediumGame);
   if (gameMode === "easy") {
